@@ -2,6 +2,6 @@ package features;
 
 public class Fornecedores extends Feature {
     public Fornecedores() {
-        super("Fornecedores", "desc", Feature.TIPO_VARIAVEL);
+        super("Fornecedores", "Funcionalidades de cadastro e\ninformações sobre os fornecedores.", Feature.TIPO_VARIAVEL);
     }
 }

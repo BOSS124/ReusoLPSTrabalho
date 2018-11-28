@@ -312,6 +312,7 @@ public class Configurador extends JFrame {
                         oos.writeObject(instModel.getElementAt(i).getClass());
                     }
                     oos.close();
+                    JOptionPane.showMessageDialog(configurador, "Salvo com sucesso", "Salvar", JOptionPane.PLAIN_MESSAGE);
                 }
                 catch(Exception ex) {
                     JOptionPane.showMessageDialog(configurador, "Não foi possível salvar", "Erro", JOptionPane.ERROR_MESSAGE);

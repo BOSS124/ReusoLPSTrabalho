@@ -76,7 +76,6 @@ public class Dashboard extends JFrame {
         private static final long serialVersionUID = 2L;
 
         private int centerX;
-        private boolean mousePressed;
         private int clickX;
         private BufferedImage img;
 
@@ -85,7 +84,6 @@ public class Dashboard extends JFrame {
         public Board(ArrayList<Feature> features) {
             super();
             this.features = features;
-            mousePressed = false;
             addMouseListener(this);
             addMouseMotionListener(this);
         }
@@ -139,8 +137,6 @@ public class Dashboard extends JFrame {
             centerX = 0;
         }
 
-
-
         @Override
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
@@ -152,6 +148,17 @@ public class Dashboard extends JFrame {
 
                 BufferedImage sub = img.getSubimage(centerX, 0, getWidth(), getHeight());
                 g2d.drawImage(sub, null, 0, 0);
+
+                g2d.setColor(Color.DARK_GRAY);
+                g2d.fillRect(0, 0, getWidth(), 30);
+
+                g2d.setColor(Color.GREEN);
+                g2d.fillRect(5, 5, 20, 20);
+                g2d.drawString("COMUM", 26, 19);
+
+                g2d.setColor(Color.YELLOW);
+                g2d.fillRect(100, 5, 20, 20);
+                g2d.drawString("VARIÁVEL", 121, 19);
             }
         }
 
@@ -173,12 +180,10 @@ public class Dashboard extends JFrame {
         @Override
         public void mousePressed(MouseEvent e) {
             clickX = e.getX();
-            mousePressed = true;
         }
 
         @Override
         public void mouseReleased(MouseEvent e) {
-            mousePressed = false;
         }
 
         @Override
